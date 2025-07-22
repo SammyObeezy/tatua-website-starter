@@ -1,130 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Tatua's mission to eliminate support chaos and meet our team of enterprise support experts.">
+    <meta name="description"
+        content="Learn about Tatua's mission to eliminate support chaos and meet our team of enterprise support experts.">
     <title>About Us - Tatua Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-           <!-- Breadcrumb Navigation -->
-        <nav aria-label="Breadcrumb">
-            <div>
+        <nav>
+            <div class="logo-container">
                 <a href="index.html">
                     <img src="assets/tatua-logo.png" alt="Tatua Logo">
                 </a>
             </div>
-            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="case-studies.html">Case Studies</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <nav aria-label="Breadcrumb">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li aria-current="page">About</li>
-            </ul>
-        </nav>
+
         <section>
             <h1>Our Story</h1>
-            <p>Founded in 2020 by former enterprise support leaders, Tatua was born from frustration with outdated ticketing systems. We've processed over 2 million support tickets and helped companies reduce response times by an average of 45%.</p>
-            <p>After experiencing the pain of managing support operations at scale, our founders knew there had to be a better way. Traditional ticketing systems were slow, inflexible, and created more problems than they solved.</p>
+            <p>Founded in 2020 by former enterprise support leaders, Tatua was born from frustration with outdated
+                ticketing systems. We've processed over 2 million support tickets and helped companies reduce response
+                times by an average of 45%.</p>
+            <p>After experiencing the pain of managing support operations at scale, our founders knew there had to be a
+                better way. Traditional ticketing systems were slow, inflexible, and created more problems than they
+                solved.</p>
         </section>
 
         <!-- Mission Statement Section -->
         <section>
             <h2>Our Mission</h2>
-            <p>To eliminate support chaos and help businesses deliver exceptional customer experiences through intelligent automation and streamlined workflows.</p>
+            <p>To eliminate support chaos and help businesses deliver exceptional customer experiences through
+                intelligent automation and streamlined workflows.</p>
         </section>
 
         <!-- Team Section -->
-        <section>
+        <section class="team-section">
             <h2>Meet Our Team</h2>
-            
-            <div>
-                <article>
-                    <div>
+
+            <div class="team-grid">
+                <article class="team-card">
+                    <div class="team-card-header">
                         <h3>Sarah Chen</h3>
-                        <p><strong>CEO & Co-founder</strong></p>
+                        <p class="role">CEO & Co-founder</p>
+                    </div>
+                    <div class="team-card-content">
                         <dl>
                             <dt>Background</dt>
                             <dd>Former Head of Support at TechCorp</dd>
-                            
+
                             <dt>Experience</dt>
                             <dd>10+ years in customer success</dd>
-                            
+
                             <dt>Email</dt>
-                            <dd><a href="mailto:sarah@tatua.com">sarah@tatua.com</a></dd>
-                            
+                            <dd><a href="mailto:sarah@tatua.com" class="email">sarah@tatua.com</a></dd>
+
                             <dt>Bio</dt>
-                            <dd>Sarah led support teams of 50+ agents and understands the challenges of scaling customer service operations.</dd>
+                            <dd>Sarah led support teams of 50+ agents and understands the challenges of scaling customer
+                                service operations.</dd>
                         </dl>
                     </div>
                 </article>
 
-                <article>
-                    <div>
+                <article class="team-card">
+                    <div class="team-card-header">
                         <h3>Marcus Rodriguez</h3>
-                        <p><strong>CTO & Co-founder</strong></p>
+                        <p class="role">CTO & Co-founder</p>
+                    </div>
+                    <div class="team-card-content">
                         <dl>
                             <dt>Background</dt>
                             <dd>Ex-Senior Engineer at CloudScale</dd>
-                            
+
                             <dt>Experience</dt>
                             <dd>Expert in distributed systems</dd>
-                            
+
                             <dt>Email</dt>
-                            <dd><a href="mailto:marcus@tatua.com">marcus@tatua.com</a></dd>
-                            
+                            <dd><a href="mailto:marcus@tatua.com" class="email">marcus@tatua.com</a></dd>
+
                             <dt>Bio</dt>
-                            <dd>Marcus built high-performance systems serving millions of users and brings that expertise to support infrastructure.</dd>
+                            <dd>Marcus built high-performance systems serving millions of users and brings that
+                                expertise to support infrastructure.</dd>
                         </dl>
                     </div>
                 </article>
 
-                <article>
-                    <div>
+                <article class="team-card">
+                    <div class="team-card-header">
                         <h3>Jennifer Park</h3>
-                        <p><strong>Head of Product</strong></p>
+                        <p class="role">Head of Product</p>
+                    </div>
+                    <div class="team-card-content">
                         <dl>
                             <dt>Background</dt>
                             <dd>Former Product Manager at SupportFlow</dd>
-                            
+
                             <dt>Experience</dt>
                             <dd>Specialist in UX design</dd>
-                            
+
                             <dt>Email</dt>
-                            <dd><a href="mailto:jennifer@tatua.com">jennifer@tatua.com</a></dd>
-                            
+                            <dd><a href="mailto:jennifer@tatua.com" class="email">jennifer@tatua.com</a></dd>
+
                             <dt>Bio</dt>
-                            <dd>Jennifer designed user experiences for complex enterprise software and focuses on making support tools intuitive.</dd>
+                            <dd>Jennifer designed user experiences for complex enterprise software and focuses on making
+                                support tools intuitive.</dd>
                         </dl>
                     </div>
                 </article>
 
-                <article>
-                    <div>
+                <article class="team-card">
+                    <div class="team-card-header">
                         <h3>David Kim</h3>
-                        <p><strong>Lead Developer</strong></p>
+                        <p class="role">Lead Developer</p>
+                    </div>
+                    <div class="team-card-content">
                         <dl>
                             <dt>Background</dt>
                             <dd>Full-stack engineer, 8 years experience</dd>
-                            
+
                             <dt>Experience</dt>
                             <dd>Open source contributor</dd>
-                            
+
                             <dt>Email</dt>
-                            <dd><a href="mailto:david@tatua.com">david@tatua.com</a></dd>
-                            
+                            <dd><a href="mailto:david@tatua.com" class="email">david@tatua.com</a></dd>
+
                             <dt>Bio</dt>
-                            <dd>David contributes to major open source projects and ensures our platform follows industry best practices.</dd>
+                            <dd>David contributes to major open source projects and ensures our platform follows
+                                industry best practices.</dd>
                         </dl>
                     </div>
                 </article>
             </div>
         </section>
-
         <!-- Company Stats Section -->
         <section>
             <h2>By the Numbers</h2>
@@ -159,7 +182,7 @@
         <!-- Values Section -->
         <section>
             <h2>Our Values</h2>
-            
+
             <div>
                 <article>
                     <h3>Customer First</h3>
@@ -196,4 +219,5 @@
         </div>
     </footer>
 </body>
+
 </html>
