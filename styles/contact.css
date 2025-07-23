@@ -1,0 +1,203 @@
+/* Contact page specific styles */
+
+form {
+    max-width: 800px;
+    margin: var(--space-xl) auto;
+}
+
+fieldset {
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    background: var(--gray-50);
+}
+
+/* Nested fieldset styling */
+fieldset fieldset {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    margin: var(--space-md) 0;
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+}
+
+legend {
+    font-weight: 600;
+    color: var(--gray-900);
+    padding: 0 var(--space-md);
+    font-size: var(--font-size-lg);
+}
+
+/* Nested fieldset legends */
+fieldset fieldset legend {
+    font-size: var(--font-size-base);
+    color: var(--gray-800);
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--space-sm);
+    color: var(--gray-700);
+    font-weight: 500;
+}
+
+/* Radio and checkbox container styling */
+fieldset > div {
+    margin-bottom: var(--space-lg);
+}
+
+/* Radio button groups - horizontal layout */
+fieldset fieldset > div {
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+/* Container for all radio/checkbox options - horizontal layout */
+fieldset fieldset {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    margin: var(--space-md) 0;
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+/* Direct child divs of main fieldset (for standalone checkboxes) */
+fieldset > div:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+/* Radio and checkbox specific styling */
+input[type="radio"], 
+input[type="checkbox"] {
+    width: auto;
+    margin-right: var(--space-sm);
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+/* Labels for radio and checkbox inputs */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    margin-bottom: 0;
+    cursor: pointer;
+    display: inline;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Hover states for radio/checkbox labels */
+input[type="radio"] + label:hover,
+input[type="checkbox"] + label:hover {
+    color: var(--primary-blue);
+}
+
+/* Focus states for better accessibility */
+input[type="radio"]:focus + label,
+input[type="checkbox"]:focus + label {
+    color: var(--primary-blue);
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.75em 1em;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: var(--white);
+    margin-bottom: var(--space-md);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: auto;
+    margin-right: var(--space-sm);
+    margin-bottom: 0;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Form actions styling */
+form > div:last-child {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: flex-start;
+    margin-top: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+/* Responsive form styling */
+@media (max-width: 768px) {
+    form {
+        margin: var(--space-lg) 0;
+        padding: 0 var(--space-md);
+    }
+    
+    fieldset {
+        padding: var(--space-lg);
+    }
+    
+    fieldset fieldset {
+        padding: var(--space-md);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+    
+    fieldset fieldset > div {
+        width: 100%;
+    }
+    
+    legend {
+        font-size: var(--font-size-base);
+    }
+    
+    fieldset fieldset legend {
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    fieldset {
+        padding: var(--space-md);
+    }
+    
+    fieldset fieldset {
+        padding: var(--space-sm);
+        margin: var(--space-sm) 0;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    form > div:last-child {
+        flex-direction: column;
+    }
+    
+    form > div:last-child button {
+        width: 100%;
+        margin: var(--space-xs) 0;
+    }
+}
