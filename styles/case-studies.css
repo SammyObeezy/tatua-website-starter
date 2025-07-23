@@ -277,6 +277,7 @@ table {
     border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
 }
 
 caption {
@@ -285,25 +286,199 @@ caption {
     color: var(--gray-900);
     margin-bottom: var(--space-lg);
     text-align: left;
+    padding: var(--space-md) 0;
 }
 
 th, td {
     padding: var(--space-md) var(--space-lg);
     text-align: left;
     border-bottom: 1px solid var(--gray-200);
+    vertical-align: top;
 }
 
 th {
-    background: var(--gray-50);
+    background: var(--primary-blue);
+    color: var(--white);
     font-weight: 600;
-    color: var(--gray-900);
     font-size: var(--font-size-sm);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-tr:hover {
+/* Alternating row colors for better readability */
+tbody tr:nth-child(even) {
     background-color: var(--gray-50);
+}
+
+tbody tr:hover {
+    background-color: var(--gray-100);
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+
+/* Special styling for metric improvements */
+td:contains("%"), 
+td:contains("faster"),
+td:contains("better"),
+td:contains("increase"),
+td:contains("improvement") {
+    color: var(--green-success);
+    font-weight: 600;
+}
+
+/* Price column styling */
+td:contains("$") {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* Feature comparison table specific styling */
+table:has(caption:contains("Feature Comparison")) th:first-child {
+    background: var(--gray-800);
+    color: var(--white);
+    font-weight: 700;
+}
+
+table:has(caption:contains("Feature Comparison")) td:first-child {
+    background: var(--gray-100);
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+/* Yes/No/Unlimited indicators */
+td:contains("Yes") {
+    color: var(--green-success);
+    font-weight: 600;
+}
+
+td:contains("No") {
+    color: var(--red-error);
+    font-weight: 600;
+}
+
+td:contains("Unlimited") {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+td:contains("Custom") {
+    color: var(--orange-accent);
+    font-weight: 600;
+}
+
+/* ROI Calculator Section */
+.roi-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    padding: var(--space-3xl);
+    border-radius: var(--radius-lg);
+    margin: var(--space-3xl) 0;
+    text-align: center;
+}
+
+.roi-section h2 {
+    color: var(--white);
+    margin-bottom: var(--space-lg);
+}
+
+.roi-section p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+.roi-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-2xl);
+}
+
+.roi-metric {
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(10px);
+}
+
+.roi-metric strong {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--white);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: var(--gray-50);
+    padding: var(--space-3xl);
+    border-radius: var(--radius-lg);
+    margin: var(--space-3xl) 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-2xl);
+    margin-top: var(--space-2xl);
+}
+
+.testimonial {
+    background: var(--white);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--primary-blue);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial blockquote {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 0 var(--space-lg) 0;
+    font-style: italic;
+    font-size: var(--font-size-lg);
+    color: var(--gray-800);
+}
+
+.testimonial cite {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: var(--font-size-sm);
+}
+
+/* Performance indicators */
+.metric-improvement {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--green-success);
+    color: var(--white);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.metric-improvement::before {
+    content: "↗";
+    font-size: var(--font-size-base);
+}
+
+.metric-value {
+    font-weight: 700;
+    color: var(--primary-blue);
 }
 
 /* Responsive styles specific to case studies page */
@@ -345,12 +520,37 @@ tr:hover {
         width: 100%;
     }
     
+    /* Table responsive styles */
     table {
         font-size: var(--font-size-sm);
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
     
     th, td {
         padding: var(--space-sm);
+        min-width: 120px;
+    }
+    
+    /* ROI section mobile */
+    .roi-section {
+        padding: var(--space-2xl) var(--space-lg);
+    }
+    
+    .roi-metrics {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    /* Testimonials mobile */
+    .testimonials-section {
+        padding: var(--space-2xl) var(--space-lg);
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
     }
 }
 
@@ -391,5 +591,47 @@ tr:hover {
     .metric-badge {
         font-size: 0.6875rem;
         padding: var(--space-xs);
+    }
+    
+    /* Mobile table styling */
+    table {
+        font-size: 0.75rem;
+    }
+    
+    th, td {
+        padding: var(--space-xs) var(--space-sm);
+        min-width: 100px;
+    }
+    
+    caption {
+        font-size: var(--font-size-base);
+        padding: var(--space-sm) 0;
+    }
+    
+    /* Mobile ROI section */
+    .roi-section {
+        padding: var(--space-xl) var(--space-md);
+        text-align: center;
+    }
+    
+    .roi-metric {
+        padding: var(--space-lg);
+    }
+    
+    .roi-metric strong {
+        font-size: var(--font-size-xl);
+    }
+    
+    /* Mobile testimonials */
+    .testimonials-section {
+        padding: var(--space-xl) var(--space-md);
+    }
+    
+    .testimonial {
+        padding: var(--space-lg);
+    }
+    
+    .testimonial blockquote {
+        font-size: var(--font-size-base);
     }
 }
