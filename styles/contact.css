@@ -1,15 +1,159 @@
 /* Contact page specific styles */
 
+/* Contact Information Layout - Three Row Structure */
+.contact-row {
+    margin-bottom: 2rem;
+    padding: 2em;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
+.contact-row:last-of-type {
+    margin-bottom: 0;
+}
+
+.contact-row h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5em;
+}
+
+/* Row 1: Company Details */
+.contact-row:nth-of-type(1) {
+    background: var(--gray-50);
+    border-left: 4px solid var(--primary-color);
+}
+
+.company-details .company-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+.company-details .address-line {
+    color: var(--gray-700);
+    margin-bottom: 0.25em;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.company-details .address-line:last-child {
+    margin-bottom: 0;
+}
+
+/* Row 2: Contact Info (Phone Numbers + Email Addresses) */
+.contact-row:nth-of-type(2) {
+    background: var(--white);
+    border-left: 4px solid var(--green-success);
+}
+
+.contact-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    margin-top: 1em;
+}
+
+.phone-section h4,
+.email-section h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 1em;
+    border-bottom: 1px solid var(--gray-300);
+    padding-bottom: 0.5em;
+}
+
+.phone-section p,
+.email-section p {
+    margin-bottom: 0.75em;
+    color: var(--gray-700);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.phone-section p:last-child,
+.email-section p:last-child {
+    margin-bottom: 0;
+}
+
+.phone-section p strong,
+.email-section p strong {
+    color: var(--gray-900);
+    font-weight: 600;
+    display: inline-block;
+    min-width: 120px;
+    margin-right: 0.5em;
+}
+
+.phone-section a,
+.email-section a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.phone-section a:hover,
+.email-section a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Row 3: Business Hours */
+.contact-row:nth-of-type(3) {
+    background: var(--gray-50);
+    border-left: 4px solid var(--orange-accent);
+}
+
+.hours-details p {
+    margin-bottom: 0.75em;
+    color: var(--gray-700);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.hours-details p:last-of-type {
+    margin-bottom: 1.5em;
+}
+
+.hours-details p strong {
+    color: var(--gray-900);
+    font-weight: 600;
+    display: inline-block;
+    min-width: 140px;
+    margin-right: 0.5em;
+}
+
+.emergency-support {
+    background: var(--green-success);
+    color: var(--white);
+    padding: 1em;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: var(--radius-sm);
+    margin-top: 1em;
+}
+
+/* Form Styles */
 form {
     max-width: 800px;
-    margin: var(--space-xl) auto;
+    margin: 2em auto;
 }
 
 fieldset {
     border: 1px solid var(--gray-300);
     border-radius: var(--radius-lg);
-    padding: var(--space-xl);
-    margin-bottom: var(--space-xl);
+    padding: 2em;
+    margin-bottom: 2em;
     background: var(--gray-50);
 }
 
@@ -17,55 +161,55 @@ fieldset {
 fieldset fieldset {
     background: var(--white);
     border: 1px solid var(--gray-200);
-    margin: var(--space-md) 0;
-    padding: var(--space-lg);
+    margin: 1em 0;
+    padding: 1.5em;
     border-radius: var(--radius-md);
 }
 
 legend {
     font-weight: 600;
     color: var(--gray-900);
-    padding: 0 var(--space-md);
-    font-size: var(--font-size-lg);
+    padding: 0 1em;
+    font-size: 1.125rem;
 }
 
 /* Nested fieldset legends */
 fieldset fieldset legend {
-    font-size: var(--font-size-base);
+    font-size: 1rem;
     color: var(--gray-800);
     font-weight: 600;
 }
 
 label {
     display: block;
-    margin-bottom: var(--space-sm);
+    margin-bottom: 0.5em;
     color: var(--gray-700);
     font-weight: 500;
 }
 
 /* Radio and checkbox container styling */
 fieldset > div {
-    margin-bottom: var(--space-lg);
+    margin-bottom: 1.5em;
 }
 
 /* Radio button groups - horizontal layout */
 fieldset fieldset > div {
-    margin-bottom: var(--space-md);
+    margin-bottom: 1em;
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: 0.5em;
 }
 
 /* Container for all radio/checkbox options - horizontal layout */
 fieldset fieldset {
     background: var(--white);
     border: 1px solid var(--gray-200);
-    margin: var(--space-md) 0;
-    padding: var(--space-lg);
+    margin: 1em 0;
+    padding: 1.5em;
     border-radius: var(--radius-md);
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-lg);
+    gap: 1.5em;
     align-items: center;
 }
 
@@ -73,15 +217,15 @@ fieldset fieldset {
 fieldset > div:has(input[type="checkbox"]) {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-lg);
+    gap: 0.5em;
+    margin-bottom: 1.5em;
 }
 
 /* Radio and checkbox specific styling */
 input[type="radio"], 
 input[type="checkbox"] {
     width: auto;
-    margin-right: var(--space-sm);
+    margin-right: 0.5em;
     margin-bottom: 0;
     flex-shrink: 0;
 }
@@ -99,14 +243,14 @@ input[type="checkbox"] + label {
 /* Hover states for radio/checkbox labels */
 input[type="radio"] + label:hover,
 input[type="checkbox"] + label:hover {
-    color: var(--primary-blue);
+    color: var(--primary-color);
 }
 
 /* Focus states for better accessibility */
 input[type="radio"]:focus + label,
 input[type="checkbox"]:focus + label {
-    color: var(--primary-blue);
-    outline: 2px solid var(--primary-blue);
+    color: var(--primary-color);
+    outline: 2px solid var(--primary-color);
     outline-offset: 2px;
     border-radius: var(--radius-sm);
 }
@@ -116,22 +260,22 @@ input, select, textarea {
     padding: 0.75em 1em;
     border: 1px solid var(--gray-300);
     border-radius: var(--radius-md);
-    font-size: var(--font-size-base);
+    font-size: 1rem;
     font-family: var(--font-family);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     background: var(--white);
-    margin-bottom: var(--space-md);
+    margin-bottom: 1em;
 }
 
 input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
 }
 
 input[type="radio"], input[type="checkbox"] {
     width: auto;
-    margin-right: var(--space-sm);
+    margin-right: 0.5em;
     margin-bottom: 0;
 }
 
@@ -143,28 +287,95 @@ textarea {
 /* Form actions styling */
 form > div:last-child {
     display: flex;
-    gap: var(--space-md);
+    gap: 1em;
     justify-content: flex-start;
-    margin-top: var(--space-xl);
+    margin-top: 2em;
     flex-wrap: wrap;
 }
 
-/* Responsive form styling */
+/* Office Locations and Quick Actions Sections */
+section:nth-of-type(4) > div,
+section:nth-of-type(5) > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    margin-top: 1.5em;
+}
+
+section:nth-of-type(4) article,
+section:nth-of-type(5) article {
+    background: var(--gray-50);
+    padding: 1.5em;
+    border-left: 3px solid var(--primary-color);
+}
+
+section:nth-of-type(4) article h3,
+section:nth-of-type(5) article h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1em;
+}
+
+section:nth-of-type(4) article address {
+    font-style: normal;
+}
+
+section:nth-of-type(4) article address p {
+    margin-bottom: 0.5em;
+    color: var(--gray-700);
+}
+
+section:nth-of-type(4) article address a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+section:nth-of-type(4) article address a:hover {
+    text-decoration: underline;
+}
+
+section:nth-of-type(5) article p {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    .contact-row {
+        padding: 1.5em;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-details {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+    
+    .phone-section p strong,
+    .email-section p strong,
+    .hours-details p strong {
+        min-width: auto;
+        display: block;
+        margin-bottom: 0.25em;
+    }
+    
     form {
-        margin: var(--space-lg) 0;
-        padding: 0 var(--space-md);
+        margin: 1.5em 0;
+        padding: 0 1em;
     }
     
     fieldset {
-        padding: var(--space-lg);
+        padding: 1.5em;
     }
     
     fieldset fieldset {
-        padding: var(--space-md);
+        padding: 1em;
         flex-direction: column;
         align-items: flex-start;
-        gap: var(--space-md);
+        gap: 1em;
     }
     
     fieldset fieldset > div {
@@ -172,24 +383,38 @@ form > div:last-child {
     }
     
     legend {
-        font-size: var(--font-size-base);
+        font-size: 1rem;
     }
     
     fieldset fieldset legend {
-        font-size: var(--font-size-sm);
+        font-size: 0.875rem;
+    }
+    
+    section:nth-of-type(4) > div,
+    section:nth-of-type(5) > div {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
+    .contact-row {
+        padding: 1em;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-row h3 {
+        font-size: 1.125rem;
+    }
+    
     fieldset {
-        padding: var(--space-md);
+        padding: 1em;
     }
     
     fieldset fieldset {
-        padding: var(--space-sm);
-        margin: var(--space-sm) 0;
+        padding: 0.5em;
+        margin: 0.5em 0;
         flex-direction: column;
-        gap: var(--space-sm);
+        gap: 0.5em;
     }
     
     form > div:last-child {
@@ -198,6 +423,27 @@ form > div:last-child {
     
     form > div:last-child button {
         width: 100%;
-        margin: var(--space-xs) 0;
+        margin: 0.25em 0;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .contact-row {
+        break-inside: avoid;
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--gray-900);
+    }
+    
+    .phone-section a,
+    .email-section a {
+        color: var(--gray-900);
+        text-decoration: underline;
+    }
+    
+    .emergency-support {
+        background: none;
+        color: var(--gray-900);
+        border: 2px solid var(--gray-900);
     }
 }
