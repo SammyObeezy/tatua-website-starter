@@ -8,8 +8,9 @@
     <meta name="description"
         content="Get in touch with Tatua's team. Start your free trial or schedule a demo to see how we can transform your support operations.">
     <!-- <link rel="stylesheet" href="styles.css"> -->
-     <link rel="stylesheet" href="styles/base.css">
-     <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <script src="js/theme-switcher.js"></script>
 </head>
 
 <body>
@@ -20,17 +21,79 @@
                     <img src="assets/tatua-logo.png" alt="Tatua Logo">
                 </a>
             </div>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="case-studies.html">Case Studies</a></li>
             </ul>
+
+            <div class="navbar-icon-controls">
+                <div class="control-icon" id="fontSizeIcon" title="Font Size (Alt+F)" tabindex="0" role="button"
+                    aria-label="Adjust font size">
+                    <span class="font-icon">Aa</span>
+                </div>
+
+                <div class="control-icon" id="themeIcon" title="Switch Theme (Alt+T)" tabindex="0" role="button"
+                    aria-label="Switch color theme">
+                    <svg class="theme-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
+                            stroke="currentColor" stroke-width="2" />
+                        <path
+                            d="M19.14 19.14L19.01 19.01M19.01 4.99L19.14 4.86L19.01 4.99ZM4.86 19.14L4.99 19.01L4.86 19.14ZM1 12H3H1ZM21 12H23H21ZM4.99 4.99L4.86 4.86L4.99 4.99ZM12 1V3V1ZM12 21V23V21Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <div class="control-panel" id="fontSizePanel">
+                    <div class="panel-header">
+                        <span class="font-icon">Aa</span>
+                        <h3>Font Size</h3>
+                    </div>
+                    <div class="font-size-control">
+                        <div class="font-size-slider-container">
+                            <span>A</span>
+                            <input type="range" id="fontSizeSlider" class="font-size-slider" min="12" max="24"
+                                value="16" step="1" aria-label="Font size slider">
+                            <span>A</span>
+                        </div>
+                        <div class="font-size-display" id="fontSizeDisplay">16px</div>
+                    </div>
+                </div>
+
+                <div class="control-panel" id="themePanel">
+                    <div class="panel-header">
+                        <svg class="theme-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
+                                stroke="currentColor" stroke-width="2" />
+                        </svg>
+                        <h3>Theme</h3>
+                    </div>
+                    <div class="theme-control">
+                        <div class="theme-options">
+                            <div class="theme-option purple active" data-theme="purple" tabindex="0" role="button"
+                                aria-label="Purple theme">
+                                <div class="theme-name">Purple</div>
+                                <div class="theme-preview"></div>
+                            </div>
+                            <div class="theme-option brown" data-theme="brown" tabindex="0" role="button"
+                                aria-label="Brown theme">
+                                <div class="theme-name">Brown</div>
+                                <div class="theme-preview"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
+    <script src="icon-theme-controller.js"></script>
     <main>
-           <!-- Breadcrumb Navigation -->
+        <!-- Breadcrumb Navigation -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <ol class="breadcrumb-list">
                 <li class="breadcrumb-item">
@@ -52,51 +115,48 @@
             <p>Our team is here to help you find the perfect solution for your business needs. Whether you're looking to
                 start a trial, need technical support, or want to explore partnership opportunities, we're ready to
                 help.</p>
-        </section>
+        </section>s
+        <section>
+            <h2>Contact Information</h2>
 
-        <!-- Contact Information Section -->
-      <!-- Contact Information Section -->
-<section>
-    <h2>Contact Information</h2>
+            <!-- Row 1: Company Details, Phone Numbers, and Email Addresses -->
+            <div class="contact-row">
+                <h3>Company Details</h3>
+                <div class="company-details">
+                    <p class="company-name">Tatua Solutions Inc.</p>
+                    <p class="address-line">123 Innovation Drive, Suite 400</p>
+                    <p class="address-line">San Francisco, CA 94105</p>
+                </div>
 
-    <!-- Row 1: Company Details, Phone Numbers, and Email Addresses -->
-    <div class="contact-row">
-        <h3>Company Details</h3>
-        <div class="company-details">
-            <p class="company-name">Tatua Solutions Inc.</p>
-            <p class="address-line">123 Innovation Drive, Suite 400</p>
-            <p class="address-line">San Francisco, CA 94105</p>
-        </div>
-        
-        <div class="phone-section">
-            <h4>Phone Numbers</h4>
-            <p><strong>Main:</strong> <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
-            <p><strong>Sales:</strong> <a href="tel:+15551234568">+1 (555) 123-4568</a></p>
-            <p><strong>Support:</strong> <a href="tel:+15551234569">+1 (555) 123-4569</a></p>
-        </div>
-        
-        <div class="email-section">
-            <h4>Email Addresses</h4>
-            <p><strong>General Inquiries:</strong> <a href="mailto:hello@tatua.com">hello@tatua.com</a></p>
-            <p><strong>Sales:</strong> <a href="mailto:sales@tatua.com">sales@tatua.com</a></p>
-            <p><strong>Support:</strong> <a href="mailto:support@tatua.com">support@tatua.com</a></p>
-            <p><strong>Partnerships:</strong> <a href="mailto:partners@tatua.com">partners@tatua.com</a></p>
-        </div>
-    </div>
+                <div class="phone-section">
+                    <h4>Phone Numbers</h4>
+                    <p><strong>Main:</strong> <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                    <p><strong>Sales:</strong> <a href="tel:+15551234568">+1 (555) 123-4568</a></p>
+                    <p><strong>Support:</strong> <a href="tel:+15551234569">+1 (555) 123-4569</a></p>
+                </div>
 
-    <!-- Row 2: Business Hours -->
-    <div class="contact-row">
-        <h3>Business Hours</h3>
-        <div class="hours-details">
-            <p><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM PST</p>
-            <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM PST</p>
-            <p><strong>Sunday:</strong> Closed</p>
-            <div class="emergency-support">
-                <strong>Emergency Support:</strong> 24/7 emergency support available for Enterprise customers
+                <div class="email-section">
+                    <h4>Email Addresses</h4>
+                    <p><strong>General Inquiries:</strong> <a href="mailto:hello@tatua.com">hello@tatua.com</a></p>
+                    <p><strong>Sales:</strong> <a href="mailto:sales@tatua.com">sales@tatua.com</a></p>
+                    <p><strong>Support:</strong> <a href="mailto:support@tatua.com">support@tatua.com</a></p>
+                    <p><strong>Partnerships:</strong> <a href="mailto:partners@tatua.com">partners@tatua.com</a></p>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+
+            <!-- Row 2: Business Hours -->
+            <div class="contact-row">
+                <h3>Business Hours</h3>
+                <div class="hours-details">
+                    <p><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM PST</p>
+                    <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM PST</p>
+                    <p><strong>Sunday:</strong> Closed</p>
+                    <div class="emergency-support">
+                        <strong>Emergency Support:</strong> 24/7 emergency support available for Enterprise customers
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Contact Form Section -->
         <section>

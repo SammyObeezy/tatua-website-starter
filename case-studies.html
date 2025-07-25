@@ -9,6 +9,7 @@
         content="See how companies like TechFlow and HealthCare Partners transformed their support operations with Tatua's ticketing system.">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/case-studies.css">
+    <script src="js/theme-switcher.js"></script>
 </head>
 
 <body>
@@ -19,15 +20,77 @@
                     <img src="assets/tatua-logo.png" alt="Tatua Logo">
                 </a>
             </div>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="case-studies.html" class="active">Case Studies</a></li>
+                <li><a href="case-studies.html">Case Studies</a></li>
             </ul>
+
+            <div class="navbar-icon-controls">
+                <div class="control-icon" id="fontSizeIcon" title="Font Size (Alt+F)" tabindex="0" role="button"
+                    aria-label="Adjust font size">
+                    <span class="font-icon">Aa</span>
+                </div>
+
+                <div class="control-icon" id="themeIcon" title="Switch Theme (Alt+T)" tabindex="0" role="button"
+                    aria-label="Switch color theme">
+                    <svg class="theme-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
+                            stroke="currentColor" stroke-width="2" />
+                        <path
+                            d="M19.14 19.14L19.01 19.01M19.01 4.99L19.14 4.86L19.01 4.99ZM4.86 19.14L4.99 19.01L4.86 19.14ZM1 12H3H1ZM21 12H23H21ZM4.99 4.99L4.86 4.86L4.99 4.99ZM12 1V3V1ZM12 21V23V21Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <div class="control-panel" id="fontSizePanel">
+                    <div class="panel-header">
+                        <span class="font-icon">Aa</span>
+                        <h3>Font Size</h3>
+                    </div>
+                    <div class="font-size-control">
+                        <div class="font-size-slider-container">
+                            <span>A</span>
+                            <input type="range" id="fontSizeSlider" class="font-size-slider" min="12" max="24"
+                                value="16" step="1" aria-label="Font size slider">
+                            <span>A</span>
+                        </div>
+                        <div class="font-size-display" id="fontSizeDisplay">16px</div>
+                    </div>
+                </div>
+
+                <div class="control-panel" id="themePanel">
+                    <div class="panel-header">
+                        <svg class="theme-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
+                                stroke="currentColor" stroke-width="2" />
+                        </svg>
+                        <h3>Theme</h3>
+                    </div>
+                    <div class="theme-control">
+                        <div class="theme-options">
+                            <div class="theme-option purple active" data-theme="purple" tabindex="0" role="button"
+                                aria-label="Purple theme">
+                                <div class="theme-name">Purple</div>
+                                <div class="theme-preview"></div>
+                            </div>
+                            <div class="theme-option brown" data-theme="brown" tabindex="0" role="button"
+                                aria-label="Brown theme">
+                                <div class="theme-name">Brown</div>
+                                <div class="theme-preview"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
+    <script src="icon-theme-controller.js"></script>
     <main>
         <!-- Navigation Breadcrumb -->
         <nav class="breadcrumb">
@@ -478,7 +541,7 @@
         <section class="roi-section">
             <h2>Calculate Your Potential ROI</h2>
             <p>Based on our customer data, here's what companies typically save:</p>
-            
+
             <div class="roi-metrics">
                 <div class="roi-metric">
                     <strong>$2,400</strong>
@@ -502,25 +565,28 @@
         <!-- Testimonials Section -->
         <section class="testimonials-section">
             <h2>What Our Customers Say</h2>
-            
+
             <div class="testimonials-grid">
                 <div class="testimonial">
                     <blockquote>
-                        <p>"The implementation was seamless, and the results were immediate. Our response times improved by 70% in the first month."</p>
+                        <p>"The implementation was seamless, and the results were immediate. Our response times improved
+                            by 70% in the first month."</p>
                     </blockquote>
                     <cite>— Sarah Williams, Director of Support, CloudTech</cite>
                 </div>
-                
+
                 <div class="testimonial">
                     <blockquote>
-                        <p>"Tatua's automation features saved us from hiring 3 additional support agents during our busiest quarter."</p>
+                        <p>"Tatua's automation features saved us from hiring 3 additional support agents during our
+                            busiest quarter."</p>
                     </blockquote>
                     <cite>— Robert Chen, Operations Manager, DataFlow Inc.</cite>
                 </div>
-                
+
                 <div class="testimonial">
                     <blockquote>
-                        <p>"The best investment we've made in customer experience. Our satisfaction scores have never been higher."</p>
+                        <p>"The best investment we've made in customer experience. Our satisfaction scores have never
+                            been higher."</p>
                     </blockquote>
                     <cite>— Lisa Rodriguez, Customer Success Lead, InnovateTech</cite>
                 </div>
